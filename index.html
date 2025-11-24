@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<!-- HOLD IT RIGHT THERE -->
+<head>
+  <style>
+    /*root*/
+    :root {
+      --background: #faf9f7;
+      --blue: #444C54;
+      --green: #5C7C4C;
+      --red: #C53030;
+      --text: #242424;
+    }
+
+    /*http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain)*/
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, blockquote, p, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;} /* HTML5 display-role reset for older browsers */ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;} blockquote, q {quotes: none;} body {line-height: 1;} blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;} table { border-collapse: collapse; border-spacing: 0;}
+
+    /*scrollbar*/
+    * {scrollbar-width: auto; scrollbar-color: var(--green) var(--background);}
+
+    *::-webkit-scrollbar-track {background: var(--background);}
+    *::-webkit-scrollbar-thumb {background-color: var(--green);}
+
+    /*the meat of it*/
+    html {font-size: 14px;}
+    
+    body {
+      background: var(--background);
+      color: var(--text);
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.4;
+      padding: 1.5rem;
+      text-align: justify;
+    }
+
+    .page-wrapper {
+      display: flex;
+      height: calc(100vh - 3rem);
+      position: relative;
+      width: 100%;
+    }
+
+    .content-container {
+      padding-right: 1.5rem;
+      overflow-y: auto;
+      width: 25vw;
+    }
+
+    .image-panel {
+      background: url("P1010085.JPG");
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      flex: 1;
+    }
+
+    /*text*/
+    p {font-size: 1rem; line-height: 1.4; margin: 0 0 0.75rem;}
+
+    h2, h3 {font-weight: 600; line-height: 1.2;}
+
+    h1 {font-size: 2rem; transition: .3s ease;}
+    h1:hover {font-style: italic; font-weight: bold;}
+
+    h2 {/*font-size: 1.5rem;*/margin: 1.4rem 0 0.6rem;}
+    h3 {/*font-size: 1.25rem;*/margin: 1.2rem 0 0.5rem;}
+
+    nav button, footer p {font-size: 0.9rem;}
+
+    a {text-decoration: underline;}
+
+    em {font-style: italic;}
+
+    strong {font-weight: 600;}
+
+    /*lists*/
+    ul {list-style: disc; margin: 0 0 0.75rem 1.5rem;}
+
+    /*header*/
+    header p {margin: 0 0 -0.5rem 0.1rem;}
+    
+    .header-image {display: none;}
+
+    /*navigation*/
+    nav {margin-bottom: 1.75rem;}
+    nav ul {display: flex; list-style: none; margin: 0 0 0.75rem;}
+    nav button {background: none; border: none; cursor: pointer; padding: 0; transition: .1s ease}
+    nav button:hover {background: var(--green); color: var(--background);}
+    nav :not(:last-child) {margin-right: 0.5rem;}
+
+    .content section {display: none;}
+    .content section.active {display: block;}
+
+    /*events*/
+    .event {text-align: center;}
+
+    /*rsvp*/
+    .rsvp-wagon {
+      border: 1px solid var(--text);
+      border-radius: 0.25rem;
+      color: var(--text);
+      display: block;
+      padding: 1rem;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+    }
+    .rsvp-wagon:hover {
+      background: var(--green);
+      border: 1px solid var(--background);
+      color: var(--background);
+    }
+    .rsvp-wagon:active {background: var(--red);}
+
+    /*details and summary*/
+    .faq-button {
+      border: 1px solid var(--text);
+      border-radius: 0.25rem;
+      margin-bottom: 0.5rem;
+      /*padding: 1rem;*/
+      text-align: left;
+      transition: all 0.1s ease-in-out;
+    }
+    /*.faq-button p:last-child {margin-bottom: 0;}*/
+    .faq-button:hover {
+      background: var(--green);
+      border: 1px solid var(--background);
+      color: var(--background);
+      cursor: pointer;
+    }
+    .faq-button summary {padding: 1rem;}
+
+    .faq-content {padding: 0 1rem 1rem 1rem;}
+
+    /*column*/
+    .column {display: flex;}
+    .column .rsvp-wagon {flex-grow: 1; margin-bottom: 0.75rem;}
+    .column .rsvp-wagon:first-child {margin-right: 0.5rem;}
+
+    /*schedule*/
+    .schedule {text-align: left;}
+
+    /*noscript*/
+    .noscript {
+      color: var(--red);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    /*meat so mobile!*/
+    @media (max-width: 1063px) {.content-container {width: 30vw;}}
+    @media (max-width: 883px) {.content-container { width: 35vw;}}
+    @media (max-width: 764px) {.content-container {width: 40vw;}}
+    @media (max-width: 667px) {.content-container {width: 45vw;}}
+    @media (max-width: 592px) {.content-container {width: 50vw;}}
+    @media (max-width: 530px) {
+      .image-panel {display: none;}
+      .content-container {width: 100%;}
+      .page-wrapper {flex-direction: column; height: auto;}
+
+      .header-image {display: block;}
+      .header-image img {height: 50px; width: 100%;}
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>brfr26.github.io</title>
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="header-image"><img src="P1010085.JPG"></div>
+    <div class="content-container">
+      <header>
+        <p><strong>the awesome wedding of</strong></p>
+        <h1>Victoria & Fletcher</h1>
+      </header>
+      <nav>
+        <ul>
+          <li><button data-target="home"><u>H</u>ome</button></li>
+          <li><button data-target="schedule"><u>W</u>hat to Expect</button></li>
+          <li><button data-target="history"><u>H</u>istory</button></li>
+          <li><button data-target="faq"><u>F</u>AQ</button></li>
+          <li><button data-target="photos"><u>P</u>hotos</button></li>
+        </ul>
+      </nav>
+      <noscript><div class="noscript"><div><span>Please turn on javascript in your browser settings to navigate the site!</span></div></div></noscript>
+      <div class="content">
+        <section id="home" class="active">
+          <p>Get over here, we're getting married in February.</p>
+          <p>We’re acutely aware that most of us don’t really have the resources nor liberty to call time off and travel for “the big day.” Therefore, we’re hosting a few intimate celebrations in both the US and UK.</p>
+          <em>Papers get formerly signed in super secret, then it’s…</em>
+          <div class="event">
+            <h3>Chicago, USA (February 21st, 2026)</h3>
+            <p>6:00pm - 11:00pm<br>potluck + house party</p>
+          </div>
+          <div class="event">
+            <h3>Norwich, UK (7th March, 2026)</h3>
+            <p>7:00pm - 11:00pm<br>party at st. andrew's brewhouse</p>
+          </div>
+          <p>Something awesome, something intimate. We're happy as long as you're able to join us for this special occasion. Please <a>RSVP</a> before December 18th! Thank you so much!</p>
+          <a href="" class="rsvp-wagon">RSVP Form</a>
+        </section>
+        <section id="schedule">
+          <h2>Chicago, USA [February 21st, 2026]</h2>
+          <div class="schedule">
+            <p><strong>06:00pm - 07:00pm</strong> <em>Potluck meal</em><br><strong>07:00pm - 08:00pm</strong> <em>Toasts, presentations, games</em><br><strong>08:00pm - 11:00pm</strong> <em>Duck Game + Jackbox</em></p>
+          </div>
+          <!--<strong></strong> <em></em>-->
+          <p>Drop in and out whenever you want! All we ask is that you attempt to be here 07:00pm - 08:00pm for group photos and the sentimental stuff!</p>
+          <p>If you're showing up to the potluck, store-bought home-cooked meals are both welcome, all we ask is that you contribute something (food or drink)!</p>
+          <p>There will be champagne (the bride wanted champagne), there will be music, and there will be Duck Game.</p>
+          <a href="" class="rsvp-wagon">RSVP Form</a>
+          <h2>Norwich, UK [21st February, 2026]</h2>
+          <div class="schedule">
+            <p><strong>07:00pm - 08:00pm</strong> <em>Welcome drinks</em><br><strong>08:00pm - 09:00pm</strong> <em>Toasts, presentations, games</em><br><strong>09:00pm - 11:00pm</strong> <em>Duck Game + Jackbox</em></p>
+          </div>
+          <p>No potlucks or meals, this is just your <em>party</em> party at a booked venue. Again, drop in and out whenever, just be here for the photos and speeches 08:00pm - 09:00pm.</p>
+          <div class="column">
+            <a href="" class="rsvp-wagon">Map</a>
+            <a href="" class="rsvp-wagon">RSVP Form</a>
+          </div>
+          <p>If you're travelling into Norwich, there's a good handful of accommodations within the city centre or along the bus route.</p>
+          <p>Think you’ll need travel/accommodation support? Contact either of us privately and we'll look into it!</p>
+        </section>
+        <section id="history"></section>
+        <section id="faq">
+          <h2>Actual Event Stuff</h2>
+          <details class="faq-button" name="faq"><summary><strong>Are children allowed?</strong></summary><div class="faq-content">Due to the nature of the events, no.</div></details>
+          <details class="faq-button" name="faq"><summary><strong>Do you have a registry/accept gifts?</strong></summary><div class="faq-content">We have no registry and there is absolutely no obligation to gift anything! If you’d like, however, we do accept contributions to our VISA fund (going live 21st February) to help us live together sooner, and we’re happy to receive gifts at either of the events.</div></details>
+          <details class="faq-button" name="faq"><summary><strong>Is there any parking?</strong></summary><div class="faq-content"></div></details>
+          <details class="faq-button" name="faq"><summary><strong>What is the dress code?</strong></summary><div class="faq-content"><em>Technically</em>, they call it cocktail attire/semi-formal. Sleek suits, dress shoes, heels or a cute party dress. It's "formal" without all the gross Linkedin Twat stuffiness.</p><p>Just be aware that if you're coming to the Chicago event and want to go into the backyard, heels aren’t compatible with the gravel and there may be dog poop. There may also be dogs. We haven’t established if the dogs are invited yet.</p><p>That aside, dress tuff.</div></details>
+          <h2>The Wedding Meta</h2>
+          <details class="faq-button" name="faq"><summary><strong>Why is the ceremony itself private?</strong></summary><div class="faq-content">There are a few different reasons. The short answer: Privacy. It also gave us a lot of planning power.</div></details>
+          <details class="faq-button" name="faq"><summary><strong>Why are you hosting multiple events?</strong></summary><div class="faq-content">Our day is only as special as the people we invite, and it's unfair to expect our close friends to pay hundreds to fly out or to take too much time off work just for us, especially since we've foregone the traditional celebrations.</div></details>
+          <details class="faq-button" name="faq"><summary><strong>Why are some dates DD/MM/YY (UK) and others MM/DD/YY (USA)?</strong></summary><div class="faq-content">Maintaining the transatlantic peace.</div></details>
+          <details class="faq-button" name="faq"><summary><strong>How was this site made?</strong></summary><div class="faq-content">This little site was made entirely from scratch by me, Victoria. Amateur site making is pretty much my ball park. Look up Taterinx, you'll probably find my sites. :D</div></details>
+          <h2>"I have another question!"</h2>
+          <p>You can reach out via whatever we usually talk on. Alternatively: bramhamfraher@gmail.com</p>
+          <!--<details class="faq-button" name="faq"><summary><strong></strong></summary><div class="faq-content"></div></details>-->
+        </section>
+        <section id="photos">
+          <p>Please use this QR code to add any pictures taken to our shared Dropbox.</p>
+        </section>
+      </div>
+    </div>
+    <div class="image-panel"></div>
+  </div>
+<script>
+  //navigation tabs
+  document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll("nav ul li button");
+    const sections = document.querySelectorAll(".content section");
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        const target = button.getAttribute("data-target")
+        
+        //hide all sections
+        sections.forEach(section => {
+          section.classList.remove("active");
+        });
+
+        //show selected section
+        document.getElementById(target).classList.add("active");
+      });
+    });
+  });
+
+  //accordian faq
+  class Accordion {
+  constructor(el) {
+    // Store the <details> element
+    this.el = el;
+    // Store the <summary> element
+    this.summary = el.querySelector('summary');
+    // Store the <div class="content"> element
+    this.content = el.querySelector('.faq-content');
+
+    // Store the animation object (so we can cancel it if needed)
+    this.animation = null;
+    // Store if the element is closing
+    this.isClosing = false;
+    // Store if the element is expanding
+    this.isExpanding = false;
+    // Detect user clicks on the summary element
+    this.summary.addEventListener('click', (e) => this.onClick(e));
+  }
+
+  onClick(e) {
+    // Stop default behaviour from the browser
+    e.preventDefault();
+    // Add an overflow on the <details> to avoid content overflowing
+    this.el.style.overflow = 'hidden';
+    // Check if the element is being closed or is already closed
+    if (this.isClosing || !this.el.open) {
+      this.open();
+    // Check if the element is being openned or is already open
+    } else if (this.isExpanding || this.el.open) {
+      this.shrink();
+    }
+  }
+
+  shrink() {
+    // Set the element as "being closed"
+    this.isClosing = true;
+    
+    // Store the current height of the element
+    const startHeight = `${this.el.offsetHeight}px`;
+    // Calculate the height of the summary
+    const endHeight = `${this.summary.offsetHeight}px`;
+    
+    // If there is already an animation running
+    if (this.animation) {
+      // Cancel the current animation
+      this.animation.cancel();
+    }
+    
+    // Start a WAAPI animation
+    this.animation = this.el.animate({
+      // Set the keyframes from the startHeight to endHeight
+      height: [startHeight, endHeight]
+    }, {
+      duration: 400,
+      easing: 'ease-out'
+    });
+    
+    // When the animation is complete, call onAnimationFinish()
+    this.animation.onfinish = () => this.onAnimationFinish(false);
+    // If the animation is cancelled, isClosing variable is set to false
+    this.animation.oncancel = () => this.isClosing = false;
+  }
+
+  open() {
+    // Apply a fixed height on the element
+    this.el.style.height = `${this.el.offsetHeight}px`;
+    // Force the [open] attribute on the details element
+    this.el.open = true;
+    // Wait for the next frame to call the expand function
+    window.requestAnimationFrame(() => this.expand());
+  }
+
+  expand() {
+    // Set the element as "being expanding"
+    this.isExpanding = true;
+    // Get the current fixed height of the element
+    const startHeight = `${this.el.offsetHeight}px`;
+    // Calculate the open height of the element (summary height + content height)
+    const endHeight = `${this.summary.offsetHeight + this.content.offsetHeight}px`;
+    
+    // If there is already an animation running
+    if (this.animation) {
+      // Cancel the current animation
+      this.animation.cancel();
+    }
+    
+    // Start a WAAPI animation
+    this.animation = this.el.animate({
+      // Set the keyframes from the startHeight to endHeight
+      height: [startHeight, endHeight]
+    }, {
+      duration: 400,
+      easing: 'ease-out'
+    });
+    // When the animation is complete, call onAnimationFinish()
+    this.animation.onfinish = () => this.onAnimationFinish(true);
+    // If the animation is cancelled, isExpanding variable is set to false
+    this.animation.oncancel = () => this.isExpanding = false;
+  }
+
+  onAnimationFinish(open) {
+    // Set the open attribute based on the parameter
+    this.el.open = open;
+    // Clear the stored animation
+    this.animation = null;
+    // Reset isClosing & isExpanding
+    this.isClosing = false;
+    this.isExpanding = false;
+    // Remove the overflow hidden and the fixed height
+    this.el.style.height = this.el.style.overflow = '';
+  }
+}
+
+document.querySelectorAll('details').forEach((el) => {
+  new Accordion(el);
+});
+
+//vic(t)oria b(r)(a)mham fle(t)cher f(r)(a)her -> 4t11r12a
+</script>
+</body>
+</html>
