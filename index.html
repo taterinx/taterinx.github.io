@@ -3,13 +3,16 @@
 <!-- HOLD IT RIGHT THERE -->
 <head>
   <style>
+    @font-face {font-family: Bacalisties; src: url("Bacalisties.ttf");}
+
     /*root*/
     :root {
-      --background: #faf9f7;
+      --background: #fdfdfc;
       --blue: #444C54;
       --green: #5C7C4C;
       --red: #C53030;
       --text: #242424;
+      --font: Calibri, Helvetica, Arial, sans-serif;
     }
 
     /*http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain)*/
@@ -27,11 +30,15 @@
     body {
       background: var(--background);
       color: var(--text);
-      font-family: Helvetica, Arial, sans-serif;
+      font-family: var(--font);
       font-size: 1rem;
       line-height: 1.4;
       padding: 1.5rem;
-      text-align: justify;
+    }
+
+    body::selection {
+      background: var(--green);
+      color: var(--background);
     }
 
     .page-wrapper {
@@ -44,49 +51,46 @@
     .content-container {
       padding-right: 1.5rem;
       overflow-y: auto;
-      width: 25vw;
+      width: 30vw;
     }
 
     .image-panel {
-      background: url("P1010085.JPG");
+      background: url("final gif.gif");
       background-attachment: fixed;
-      background-position: center;
-      background-size: cover;
+      background-position: right;
+      background-size: contain;
       background-repeat: no-repeat;
       flex: 1;
     }
 
     /*text*/
-    p {font-size: 1rem; line-height: 1.4; margin: 0 0 0.75rem;}
+    p {font-size: 1rem; line-height: 1.4; margin: 0 0 0.75rem; text-align: justify;}
 
     h2, h3 {font-weight: 600; line-height: 1.2;}
 
-    h1 {font-size: 2rem; transition: .3s ease;}
-    h1:hover {font-style: italic; font-weight: bold;}
+    h1 {font-size: 3rem; font-family: Bacalisties;}
 
     h2 {/*font-size: 1.5rem;*/margin: 1.4rem 0 0.6rem;}
     h3 {/*font-size: 1.25rem;*/margin: 1.2rem 0 0.5rem;}
 
     nav button, small {font-size: 0.9rem;}
 
-    a {text-decoration: underline;}
+    a {text-decoration: underline; color: var(--green);}
+    a:hover {color: var(--red); cursor: pointer;}
 
     em {font-style: italic;}
 
     strong {font-weight: 600;}
 
     /*lists*/
-    ul {list-style: disc; margin: 0 0 0.75rem 1.5rem;}
+    ul {list-style: "- "; margin: 0 0 0.75rem 2rem;}
 
-    /*header*/
-    header p {margin: 0 0 -0.5rem 0.1rem;}
-    
     .header-image {display: none;}
 
     /*navigation*/
     nav {margin-bottom: 1.75rem;}
     nav ul {display: flex; list-style: none; margin: 0 0 0.75rem;}
-    nav button {background: none; border: none; color: var(--text); cursor: pointer; padding: 0; transition: .1s ease}
+    nav button {background: none; border: none; color: var(--text); cursor: pointer; padding: 0; transition: .1s ease; font-family: var(--font);}
     nav button:hover {background: var(--green); color: var(--background);}
     nav :not(:last-child) {margin-right: 0.5rem;}
 
@@ -95,16 +99,17 @@
 
     /*footer*/
     footer {
-      color: var(--background);
+      color: var(--text);
       position: fixed;
       bottom: 0;
-      margin: 1rem 2rem;
+      margin: 1rem 1.75rem;
       right: 0;
     }
+    footer p {background: var(--background); padding: 0 0.25rem;}
     footer a {color: var(--green);}
 
     /*events*/
-    .event {text-align: center;}
+    .event {text-align: left;}
 
     /*rsvp*/
     .rsvp-wagon {
@@ -112,7 +117,7 @@
       border-radius: 0.25rem;
       color: var(--text);
       display: block;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       padding: 1rem;
       text-align: center;
       text-decoration: none;
@@ -172,77 +177,73 @@
       .page-wrapper {flex-direction: column; height: auto;}
 
       .header-image {display: block;}
-      .header-image img {height: 50px; width: 100%;}
+      .header-image img {width: 100%;}
     }
   </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>brfr26.github.io</title>
+  <title>You're Invited!</title>
 </head>
 <body>
   <div class="page-wrapper">
-    <div class="header-image"><img src="P1010085.JPG"></div>
+    <div class="header-image"><img src="final gif.gif"></div>
     <div class="content-container">
-      <header>
-        <p><strong>the awesome wedding of</strong></p>
-        <h1>Victoria & Fletcher</h1>
-      </header>
+      <header><h1>Victoria & Fletcher</h1>
+</header>
       <nav>
         <ul>
           <li><button data-target="home"><u>H</u>ome</button></li>
           <li><button data-target="schedule"><u>W</u>hat to Expect</button></li>
-          <li><button data-target="history"><u>H</u>istory</button></li>
           <li><button data-target="faq"><u>F</u>AQ</button></li>
-          <li><button data-target="photos"><u>P</u>hotos</button></li>
         </ul>
       </nav>
       <noscript><div class="noscript"><div><span>Please turn on javascript in your browser settings to navigate the site!</span></div></div></noscript>
       <div class="content">
         <section id="home" class="active">
-          <p>Get over here, we're getting married in February.</p>
-          <p>We’re acutely aware that most of us don’t really have the resources nor liberty to call time off and travel for “the big day.” Therefore, we’re hosting a few intimate celebrations in both the US and UK.</p>
-          <em>Papers get formerly signed in super secret, then it’s…</em>
+          <p>We met in March 2022 as freshmen and, since then, we've moved through life as an unwavering unit. Now, a little under four years later, we're showing the pond put between us what's what.</p><p>Get over here, we're getting married in February. <em>Papers get formerly signed in super secret,</em> then it's straight to party town.</p>
           <div class="event">
-            <h3>Chicago, USA (February 21st, 2026)</h3>
-            <p>6:00pm - 11:00pm<br>potluck + house party</p>
+            <h3>Chicago, USA</h3>
+            <ul>
+              <li><strong>Date: </strong>February 21st, 2026</li>
+              <li><strong>Time: </strong>6:00pm - 11:00pm</li>
+            </ul>
           </div>
           <div class="event">
-            <h3>Norwich, UK (7th March, 2026)</h3>
-            <p>7:00pm - 11:00pm<br>party town</p>
+            <h3>Norwich, UK</h3>
+            <ul>
+              <li><strong>Date: </strong>21st March, 2026</li>
+              <li><strong>Time: </strong>7:00pm - 11:00pm</li>
+            </ul>
           </div>
-          <p>Please <a>RSVP</a> before December 18th! Thank you!</p>
-          <a href="" class="rsvp-wagon">RSVP Form</a>
+          <p>While these aren't formal "receptions", we would still appreciate it if you <a href="https://tally.so/r/A774gz" target="_blank">RSVP</a> before Christmas! Thank you!</p>
+          <a href="https://tally.so/r/A774gz" class="rsvp-wagon" target="_blank">RSVP Form</a>
           <p>Because this is a public webpage, locations will be revealed in the RSVP form (use the password we sent/included in the invite!)</p>
         </section>
         <section id="schedule">
           <h2>Chicago, USA [February 21st, 2026]</h2>
-          <div class="schedule">
-            <p><strong>06:00pm - 07:00pm</strong> <em>Potluck meal</em><br><strong>07:00pm - 08:00pm</strong> <em>Toasts, presentations, games</em><br><strong>08:00pm - 11:00pm</strong> <em>Duck Game + Jackbox</em></p>
-          </div>
-          <!--<strong></strong> <em></em>-->
-          <p>Drop in and out whenever you want! All we ask is that you attempt to be here 07:00pm - 08:00pm for group photos and the sentimental stuff!</p>
-          <p>If you're showing up to the potluck, store-bought home-cooked meals are both welcome, all we ask is that you contribute something (food or drink)!</p>
+          <ul class="schedule">
+            <li><strong>6:00pm - 7:00pm</strong> Potluck</li>
+            <li><strong>7:00pm - 8:00pm</strong> Toasts, sentiments, group photos</li>
+            <li><strong>8:00pm - 11:00pm</strong> Duck Game + Jackbox</li>
+          </ul>
+          <p>If you're showing up to the potluck, store-bought and home-cooked meals are both welcome, all we ask is that you contribute something. You can sign up in our <a href="https://tally.so/r/A774gz" target="_blank">RSVP</a> form!</p>
           <p>There will be champagne (the bride wanted champagne), there will be music, and there will be Duck Game.</p>
-          <a href="" class="rsvp-wagon">RSVP Form</a>
-          <h2>Norwich, UK [21st February, 2026]</h2>
-          <div class="schedule">
-            <p><strong>07:00pm - 08:00pm</strong> <em>Welcome drinks</em><br><strong>08:00pm - 09:00pm</strong> <em>Toasts, presentations, games</em><br><strong>09:00pm - 11:00pm</strong> <em>Duck Game + Jackbox</em></p>
-          </div>
-          <p>No potlucks or meals, this is just your <em>party</em> party at a booked venue. Again, drop in and out whenever, just be here for the photos and speeches 08:00pm - 09:00pm.</p>
-          <div class="column">
-            <a href="" class="rsvp-wagon">Map</a>
-            <a href="" class="rsvp-wagon">RSVP Form</a>
-          </div>
-          <p>If you're travelling into Norwich, there's a good handful of accommodations within the city centre or along the bus route.</p>
-          <p>Think you’ll need travel/accommodation support? Contact either of us privately and we'll look into it!</p>
+          <h2>Norwich, UK [21st March, 2026]</h2>
+          <ul class="schedule">
+            <li><strong>7:00pm - 8:00pm</strong> <em>Welcome drinks</em></li>
+            <li><strong>8:00pm - 9:00pm</strong> <em>Toasts, sentiments, group photos</em></li>
+            <li><strong>9:00pm - 11:00pm</strong> <em>"Music on, world off"</em></li>
+          </ul>
+          <p>A <em>party</em> party at a booked venue. If you're travelling into Norwich, there's a good handful of accommodations within the city centre or along the bus route. No meals, just drinks and love.</p>
+          <a href="https://tally.so/r/A774gz" target="_blank" class="rsvp-wagon">RSVP Form</a>
+          <p>Drop in at whatever time works for you, but please be here for the photos and sappy sentiment stuff.</p>
         </section>
-        <section id="history"></section>
         <section id="faq">
           <h2>Actual Event Stuff</h2>
           <details class="faq-button" name="faq"><summary><strong>Are children allowed?</strong></summary><div class="faq-content">Due to the nature of the events, no.</div></details>
           <details class="faq-button" name="faq"><summary><strong>Do you have a registry/accept gifts?</strong></summary><div class="faq-content">We have no registry and there is absolutely no obligation to gift anything! If you’d like, however, we do accept contributions to our VISA fund (going live 21st February) to help us live together sooner, and we’re happy to receive gifts at either of the events.</div></details>
-          <details class="faq-button" name="faq"><summary><strong>Is there any parking?</strong></summary><div class="faq-content"></div></details>
-          <details class="faq-button" name="faq"><summary><strong>What is the dress code?</strong></summary><div class="faq-content"><em>Technically</em>, they call it cocktail attire/semi-formal. Sleek suits, dress shoes, heels or a cute party dress. It's "formal" without all the gross Linkedin Twat stuffiness.</p><p>Just be aware that if you're coming to the Chicago event and want to go into the backyard, heels aren’t compatible with the gravel and there may be dog poop. There may also be dogs. We haven’t established if the dogs are invited yet.</p><p>That aside, dress tuff.</div></details>
+          <details class="faq-button" name="faq"><summary><strong>Is there any parking?</strong></summary><div class="faq-content"><p>If you're attending the Chicago event, you likely already have an idea. There's no guarantee there will be an empty space along the block but you'll absolutely find somewhere. If you don't mind dressing fancy on the CTA, though, then we'd recommend that (the house is 5 minutes from Western/Damen).</p><p>We're still discussing venues for the UK event, so at the moment we can't give any advice on parking.</p></div></details>
+          <details class="faq-button" name="faq"><summary><strong>What is the dress code?</strong></summary><div class="faq-content"><p><em>Technically</em>, they call it cocktail attire/semi-formal. Sleek suits, dress shoes, heels or a cute party dress. It's "formal" without all the gross Linkedin Twat stuffiness.</p><p>Just be aware that if you're coming to the Chicago event and want to go into the backyard, heels aren’t compatible with the gravel and there may be dog poop. There may also be dogs. We haven’t established if the dogs are invited yet.</p><p>That aside, dress tuff.</div></details>
           <h2>The Wedding Meta</h2>
           <details class="faq-button" name="faq"><summary><strong>Why is the ceremony itself private?</strong></summary><div class="faq-content">There are a few different reasons. The short answer: Privacy. It also gave us a lot of planning power.</div></details>
           <details class="faq-button" name="faq"><summary><strong>Why are you hosting multiple events?</strong></summary><div class="faq-content">Our day is only as special as the people we invite, and it's unfair to expect our close friends to pay hundreds to fly out or to take too much time off work just for us, especially since we've foregone the traditional celebrations.</div></details>
@@ -252,11 +253,8 @@
           <p>You can reach out via whatever we usually talk on. Alternatively: bramhamfraher@gmail.com</p>
           <!--<details class="faq-button" name="faq"><summary><strong></strong></summary><div class="faq-content"></div></details>-->
         </section>
-        <section id="photos">
-          <p>Please use this QR code to add any pictures taken to our shared Dropbox.</p>
-        </section>
       </div>
-      <footer><p><small>Site made by <a href="">Taterinx</a> | Hosted on <a href="">Github</a></small></p></footer>
+      <footer><p><small>Site made by <a href="https://taterinx.neocities.org/home" target="_blank">Taterinx</a> | Hosted on <a href="https://github.com/taterinx" target="_blank">Github</a></small></p></footer>
     </div>
     <div class="image-panel"></div>
   </div>
@@ -398,8 +396,6 @@
 document.querySelectorAll('details').forEach((el) => {
   new Accordion(el);
 });
-
-//vic(t)oria b(r)(a)mham fle(t)cher f(r)(a)her -> 4t11r12a
 </script>
 </body>
 </html>
