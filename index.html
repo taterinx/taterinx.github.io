@@ -97,6 +97,8 @@
     .content section {display: none;}
     .content section.active {display: block;}
 
+    .mobile-nav {display: none;}
+
     /*footer*/
     footer {
       color: var(--text);
@@ -178,6 +180,15 @@
 
       .header-image {display: block;}
       .header-image img {width: 100%;}
+
+      header nav {display: none;}
+
+      .mobile-nav {display: flex; position: fixed; bottom: 0; left: 0; background: var(--green); width: 100%; margin: 0; justify-content: center; padding-top: 0.5rem;}
+      .mobile-nav ul li:not(:last-child) {margin-right: 1rem;}
+      .mobile-nav button {font-size: 1rem; color: var(--background);}
+
+      footer {margin-bottom: 3rem; text-align: center; width: 100%; position: static;}
+      footer p {text-align: center;}
     }
   </style>
   <meta charset="UTF-8">
@@ -187,15 +198,15 @@
 <body>
   <div class="page-wrapper">
     <div class="content-container">
-      <header><h1>Victoria & Fletcher</h1>
-</header>
-      <nav>
+      <header><h1>Victoria & Fletcher</h1><nav>
         <ul>
           <li><button data-target="home"><u>H</u>ome</button></li>
           <li><button data-target="schedule"><u>W</u>hat to Expect</button></li>
           <li><button data-target="faq"><u>F</u>AQ</button></li>
         </ul>
       </nav>
+</header>
+      
       <noscript><div class="noscript"><div><span>Please turn on javascript in your browser settings to navigate the site!</span></div></div></noscript>
       <div class="content">
         <section id="home" class="active">
@@ -241,7 +252,7 @@
           <h2>Actual Event Stuff</h2>
           <details class="faq-button" name="faq"><summary><strong>Are children allowed?</strong></summary><div class="faq-content">Due to the nature of the events, no.</div></details>
           <details class="faq-button" name="faq"><summary><strong>Do you have a registry/accept gifts?</strong></summary><div class="faq-content">We have no registry and there is absolutely no obligation to gift anything! If you’d like, however, we do accept contributions to our VISA fund (going live 21st February) to help us live together sooner, and we’re happy to receive gifts at either of the events.</div></details>
-          <details class="faq-button" name="faq"><summary><strong>Is there any parking?</strong></summary><div class="faq-content"><p>If you're attending the Chicago event, you likely already have an idea. There's no guarantee there will be an empty space along the block but you'll absolutely find somewhere. If you don't mind dressing fancy on the CTA, though, then we'd recommend that (the house is 5 minutes from Western/Damen).</p><p>We're still discussing venues for the UK event, so at the moment we can't give any advice on parking.</p></div></details>
+          <details class="faq-button" name="faq"><summary><strong>Is there any parking?</strong></summary><div class="faq-content"><p>If you're attending the Chicago event, you likely already have an idea. There's no guarantee there will be an empty space along the block but you'll absolutely find somewhere. If you don't mind dressing fancy on the CTA, though, then we'd recommend that (the house is 10 minutes from Western/Damen).</p><p>We're still discussing venues for the UK event, so at the moment we can't give any advice on parking.</p></div></details>
           <details class="faq-button" name="faq"><summary><strong>What is the dress code?</strong></summary><div class="faq-content"><p><em>Technically</em>, they call it cocktail attire/semi-formal. Sleek suits, dress shoes, heels or a cute party dress. It's "formal" without all the gross Linkedin Twat stuffiness.</p><p>Just be aware that if you're coming to the Chicago event and want to go into the backyard, heels aren’t compatible with the gravel and there may be dog poop. There may also be dogs. We haven’t established if the dogs are invited yet.</p><p>That aside, dress tuff.</div></details>
           <h2>The Wedding Meta</h2>
           <details class="faq-button" name="faq"><summary><strong>Why is the ceremony itself private?</strong></summary><div class="faq-content">There are a few different reasons. The short answer: Privacy. It also gave us a lot of planning power.</div></details>
@@ -255,6 +266,13 @@
       </div>
       <div class="header-image"><img src="final gif.gif"></div>
       <footer><p><small>Site made by <a href="https://taterinx.neocities.org/home" target="_blank">Taterinx</a> | Hosted on <a href="https://github.com/taterinx" target="_blank">Github</a></small></p></footer>
+      <nav class="mobile-nav">
+        <ul>
+          <li><button data-target="home">Home</button></li>
+          <li><button data-target="schedule">What to Expect</button></li>
+          <li><button data-target="faq">FAQ</button></li>
+        </ul>
+      </nav>
     </div>
     <div class="image-panel"></div>
   </div>
