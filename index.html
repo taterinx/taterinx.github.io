@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
-<!-- HOLD IT RIGHT THERE -->
+<html lang="en">
+<!-- Last commit: Sticky header, favicon (dawg),improved mobile navigation, wording changes/additions, small adjustments to remain W3C compliant -->
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're Invited!</title>
   <style>
     @font-face {font-family: Bacalisties; src: url("Bacalisties.ttf");}
 
@@ -88,8 +91,10 @@
     .header-image {display: none;}
 
     /*navigation*/
-    nav {margin-bottom: 1.75rem;}
-    nav ul {display: flex; list-style: none; margin: 0 0 0.75rem;}
+    header {position: sticky; top: 0; background: var(--background);}
+
+    nav {padding-bottom: 0.5rem;}
+    nav ul {display: flex; list-style: none; margin: 0;}
     nav button {background: none; border: none; color: var(--text); cursor: pointer; padding: 0; transition: .1s ease; font-family: var(--font);}
     nav button:hover {background: var(--green); color: var(--background);}
     nav :not(:last-child) {margin-right: 0.5rem;}
@@ -181,91 +186,100 @@
       .header-image {display: block;}
       .header-image img {width: 100%;}
 
+      header {margin-bottom: 1rem;}
       header nav {display: none;}
 
-      .mobile-nav {display: flex; position: fixed; bottom: 0; left: 0; background: var(--green); width: 100%; margin: 0; justify-content: center; padding-top: 0.5rem;}
-      .mobile-nav ul li:not(:last-child) {margin-right: 1rem;}
-      .mobile-nav button {font-size: 1rem; color: var(--background);}
+      .mobile-nav {display: block; position: fixed; bottom: 0; left: 0; background: var(--green); width: 100%; margin: 0; padding-top: 0.25rem;}
+      .mobile-nav ul {display: flex; padding: 0 0.5rem; justify-content: center;}
+      .mobile-nav button {font-size: 1rem; color: var(--background); text-decoration: underline;}
+      .mobile-nav button:hover {background: none; color: var(--background);}
 
-      footer {margin-bottom: 3rem; text-align: center; width: 100%; position: static;}
-      footer p {text-align: center;}
+      footer {margin-bottom: 1.5rem; text-align: center; width: 100%; position: static;}
+      footer p {text-align: center; margin-bottom: 0;}
     }
   </style>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>You're Invited!</title>
 </head>
 <body>
   <div class="page-wrapper">
     <div class="content-container">
-      <header><h1>Victoria & Fletcher</h1><nav>
-        <ul>
-          <li><button data-target="home"><u>H</u>ome</button></li>
-          <li><button data-target="schedule"><u>W</u>hat to Expect</button></li>
-          <li><button data-target="faq"><u>F</u>AQ</button></li>
-        </ul>
-      </nav>
-</header>
-      
+      <!--
+      MARK: HEADER
+      -->
+      <header><h1>Victoria & Fletcher</h1>
+        <nav>
+          <ul>
+            <li><button data-target="home"><u>H</u>ome</button></li>
+            <li><button data-target="schedule"><u>W</u>hat to Expect</button></li>
+            <li><button data-target="faq"><u>F</u>AQ</button></li>
+          </ul>
+        </nav>
+      </header>
       <noscript><div class="noscript"><div><span>Please turn on javascript in your browser settings to navigate the site!</span></div></div></noscript>
       <div class="content">
+        <!--
+        MARK: HOME
+        -->
         <section id="home" class="active">
-          <p>We met in March 2022 as freshmen and, since then, we've moved through life as an unwavering unit. Now, a little under four years later, we're showing the pond put between us what's what.</p><p>Get over here, we're getting married in February. <em>Papers get formerly signed in super secret,</em> then it's straight to party town.</p>
-          <div class="event">
-            <h3>Chicago, USA</h3>
-            <ul>
-              <li><strong>Date: </strong>February 21st, 2026</li>
-              <li><strong>Time: </strong>6:00pm - 11:00pm</li>
-            </ul>
-          </div>
-          <div class="event">
-            <h3>Norwich, UK</h3>
-            <ul>
-              <li><strong>Date: </strong>21st March, 2026</li>
-              <li><strong>Time: </strong>7:00pm - 11:00pm</li>
-            </ul>
-          </div>
+          <p>We met in March 2022 as freshmen and, since then, we've moved through life as an unwavering unit. Now, a little under four years later, we're showing the pond put between us what's what.</p><p>Get over here, we're getting married in February. <em>Papers get formerly signed in super secret,</em> then it's straight to party town.</p><h3>Chicago, USA</h3>
+          <p><strong>Date: </strong>February 21st, 2026<br><strong>Time: </strong>6:00pm - 11:00pm</p>
+          <h3>Norwich, UK</h3>
+          <p><strong>Date: </strong>21st March, 2026<br><strong>Time: </strong>7:00pm - 11:00pm</p>
           <p>While these aren't formal "receptions", we would still appreciate it if you <a href="https://tally.so/r/A774gz" target="_blank">RSVP</a> before Christmas! Thank you!</p>
           <a href="https://tally.so/r/A774gz" class="rsvp-wagon" target="_blank">RSVP Form</a>
           <p>Because this is a public webpage, locations will be revealed in the RSVP form (use the password we sent/included in the invite!)</p>
         </section>
+        <!--
+        MARK: SCHEDULE
+        -->
         <section id="schedule">
+          <p>We're hosting two separate parties. You'll be able to choose which one to attend in the <a href="https://tally.so/r/A774gz" target="_blank">RSVP</a> form:</p>
           <h2>Chicago, USA [February 21st, 2026]</h2>
-          <ul class="schedule">
-            <li><strong>6:00pm - 7:00pm</strong> Potluck</li>
-            <li><strong>7:00pm - 8:00pm</strong> Toasts, sentiments, group photos</li>
-            <li><strong>8:00pm - 11:00pm</strong> Duck Game + Jackbox</li>
-          </ul>
-          <p>If you're showing up to the potluck, store-bought and home-cooked meals are both welcome, all we ask is that you contribute something. You can sign up in our <a href="https://tally.so/r/A774gz" target="_blank">RSVP</a> form!</p>
+          <p><strong>06:00pm - 07:00pm</strong> Potluck<br><strong>07:00pm - 08:00pm</strong> Toasts, sentiments, group photos<br><strong>08:00pm - 11:00pm</strong> Duck Game + Jackbox</p>
+          <p>If you're showing up to the potluck, store-bought and home-cooked meals are both welcome, all we ask is that you contribute something. You can sign up in our <a href="https://tally.so/r/A774gz" target="_blank">RSVP</a> form so we can organise meals.</p>
           <p>There will be champagne (the bride wanted champagne), there will be music, and there will be Duck Game.</p>
           <h2>Norwich, UK [21st March, 2026]</h2>
-          <ul class="schedule">
-            <li><strong>7:00pm - 8:00pm</strong> <em>Welcome drinks</em></li>
-            <li><strong>8:00pm - 9:00pm</strong> <em>Toasts, sentiments, group photos</em></li>
-            <li><strong>9:00pm - 11:00pm</strong> <em>"Music on, world off"</em></li>
-          </ul>
-          <p>A <em>party</em> party at a booked venue. If you're travelling into Norwich, there's a good handful of accommodations within the city centre or along the bus route. No meals, just drinks and love.</p>
+          <p><strong>07:00pm - 08:00pm</strong> Welcome drinks<br><strong>08:00pm - 09:00pm</strong> Toasts, sentiments, group photos<br><strong>09:00pm - 11:00pm</strong> "Music on, world off"</p>
+          <p>A <em>party</em> party at NR3; private bar and all. If you're travelling into Norwich, there's a handful of accommodations within the city centre. No meals, just drinks and love.</p>
+          <p><em>The venue doesn't have a screen so no Duck Game or Jackbox ("awww...") but if you've got a projector and are itching to make it work, let us know ("hoorah!")</em></p>
           <a href="https://tally.so/r/A774gz" target="_blank" class="rsvp-wagon">RSVP Form</a>
           <p>Drop in at whatever time works for you, but please be here for the photos and sappy sentiment stuff.</p>
         </section>
+        <!--
+        MARK: FAQ
+        -->
         <section id="faq">
           <h2>Actual Event Stuff</h2>
+          <!-- One -->
           <details class="faq-button" name="faq"><summary><strong>Are children allowed?</strong></summary><div class="faq-content">Due to the nature of the events, no.</div></details>
+          <!-- Two -->
           <details class="faq-button" name="faq"><summary><strong>Do you have a registry/accept gifts?</strong></summary><div class="faq-content">We have no registry and there is absolutely no obligation to gift anything! If you’d like, however, we do accept contributions to our VISA fund (going live 21st February) to help us live together sooner, and we’re happy to receive gifts at either of the events.</div></details>
-          <details class="faq-button" name="faq"><summary><strong>Is there any parking?</strong></summary><div class="faq-content"><p>If you're attending the Chicago event, you likely already have an idea. There's no guarantee there will be an empty space along the block but you'll absolutely find somewhere. If you don't mind dressing fancy on the CTA, though, then we'd recommend that (the house is 10 minutes from Western/Damen).</p><p>We're still discussing venues for the UK event, so at the moment we can't give any advice on parking.</p></div></details>
+          <!-- Three -->
+          <details class="faq-button" name="faq"><summary><strong>Is there any parking?</strong></summary><div class="faq-content"><p>If you're attending the Chicago event, you likely already have an idea. Find a spot along the block, take the CTA to Western or Damen (it's about a 10 minute walk), or message us and we'll look into booking group Lyfts.</p><p>The UK venue is located near the Norwich Cathedral, the closest parking space being Monastery Court for about £3.40 for the duration of the event.</p></div></details>
+          <!-- Four -->
           <details class="faq-button" name="faq"><summary><strong>What is the dress code?</strong></summary><div class="faq-content"><p><em>Technically</em>, they call it cocktail attire/semi-formal. Sleek suits, dress shoes, heels or a cute party dress. It's "formal" without all the gross Linkedin Twat stuffiness.</p><p>Just be aware that if you're coming to the Chicago event and want to go into the backyard, heels aren’t compatible with the gravel and there may be dog poop. There may also be dogs. We haven’t established if the dogs are invited yet.</p><p>That aside, dress tuff.</div></details>
           <h2>The Wedding Meta</h2>
-          <details class="faq-button" name="faq"><summary><strong>Why is the ceremony itself private?</strong></summary><div class="faq-content">There are a few different reasons. The short answer: Privacy. It also gave us a lot of planning power.</div></details>
-          <details class="faq-button" name="faq"><summary><strong>Why are you hosting multiple events?</strong></summary><div class="faq-content">Our day is only as special as the people we invite, and it's unfair to expect our close friends to pay hundreds to fly out or to take too much time off work just for us, especially since we've foregone the traditional celebrations.</div></details>
+          <!-- Five -->
+          <details class="faq-button" name="faq"><summary><strong>Why is the ceremony itself private?</strong></summary><div class="faq-content">There are a few different reasons. It's an intimate moment and ties into our answer to the next question but ultimately it was the most convenient for us.</div></details>
+          <!-- Six -->
+          <details class="faq-button" name="faq"><summary><strong>Why are you hosting multiple events?</strong></summary><div class="faq-content">Our day is only as special as the people we invite, and it's unfair to expect our close friends from either side of the pond to pay hundreds to fly out or to take too much time off work just for us, especially since we've foregone the traditional celebrations.</div></details>
+          <!-- Seven -->
+          <!-- Hehehehehehe-hehehehehehehe -->
           <details class="faq-button" name="faq"><summary><strong>Why are some dates DD/MM/YY (UK) and others MM/DD/YY (USA)?</strong></summary><div class="faq-content">Maintaining the transatlantic peace.</div></details>
-          <details class="faq-button" name="faq"><summary><strong>How was this site made?</strong></summary><div class="faq-content">This little site was made entirely from scratch by me, Victoria. Amateur site making is pretty much my ball park. Look up Taterinx, you'll probably find my sites. :D</div></details>
+          <!-- Eight -->
+          <details class="faq-button" name="faq"><summary><strong>How was this site made?</strong></summary><div class="faq-content">This little site was made entirely from scratch by me, Victoria. Amateur site making is pretty much my ball park. Look up Taterinx, you'll probably find my sites.</div></details>
           <h2>"I have another question!"</h2>
-          <p>You can reach out via whatever we usually talk on. Alternatively: bramhamfraher@gmail.com</p>
+          <p>Talk to whoever on wherever; you know our socials. Alternatively: bramhamfraher@gmail.com</p>
           <!--<details class="faq-button" name="faq"><summary><strong></strong></summary><div class="faq-content"></div></details>-->
         </section>
       </div>
-      <div class="header-image"><img src="final gif.gif"></div>
+      <div class="header-image"><img src="final-gif.gif" alt="GIF of a computer monitor screening various short half-second videos of a couple throughout their relationship."></div>
+      <!--
+      MARK: FOOTER
+      -->
       <footer><p><small>Site made by <a href="https://taterinx.neocities.org/home" target="_blank">Taterinx</a> | Hosted on <a href="https://github.com/taterinx" target="_blank">Github</a></small></p></footer>
+      <!--
+      MARK: MOBILE NAV
+      -->
       <nav class="mobile-nav">
         <ul>
           <li><button data-target="home">Home</button></li>
@@ -276,6 +290,9 @@
     </div>
     <div class="image-panel"></div>
   </div>
+  <!--
+  MARK: JAVASCRIPT
+  -->
 <script>
   //navigation tabs
   document.addEventListener("DOMContentLoaded", function() {
